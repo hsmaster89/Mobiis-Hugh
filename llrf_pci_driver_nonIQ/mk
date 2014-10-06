@@ -1,0 +1,35 @@
+gcc -c llrf_driver.c
+gcc -c calc_amplitude.c
+gcc -c calc_phase.c
+gcc -c disp.c
+gcc -c rms.c
+gcc -c mux.c
+gcc -c calibration.c
+gcc -c pacCal.c
+gcc -c loopback.c
+gcc -c wave_anl.c
+gcc -c kbv_anl.c
+gcc -W -Wall -O2 -o llrf_driver \
+	llrf_driver.o \
+	calc_amplitude.o \
+	calc_phase.o \
+	disp.o \
+	rms.o \
+	mux.o \
+	calibration.o \
+	pacCal.o \
+	loopback.o \
+	wave_anl.o \
+	kbv_anl.o \
+	-lrt -lm -lpthread
+rm -rf llrf_driver.o \
+	calc_amplitude.o \
+	calc_phase.o \
+	disp.o \
+	rms.o \
+	mux.o \
+	calibration.o \
+	pacCal.o \
+	loopback.o \
+	wave_anl.o \
+	kbv_anl.o
